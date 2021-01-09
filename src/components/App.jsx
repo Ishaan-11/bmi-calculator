@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'materialize-css/dist/css/materialize.min.css';
 import "./App.css";
 import { v4 as uuidv4 } from 'uuid';
@@ -6,7 +6,12 @@ import BmiForm from "./BmiForm";
 import Info from "./Info";
 
 function App() {
-  const [state, setState] = useState([]);
+  const initialState = JSON.parse(localStorage.getItem('bmiData')) || [];
+  const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    localStorage.setItem('bmiData', JSON.stringify(state));
+  }, [state]);
 
   function handleChange(newData) {
     const { height, weight } = newData;
@@ -20,6 +25,7 @@ function App() {
   }
 
   function handleDelete(id) {
+    localStorage.setItem('bmiLastState', JSON.stringify(state));
     setState(prevValue => {
       return prevValue.filter(info => info.id !== id);
     });
