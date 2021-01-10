@@ -4,11 +4,11 @@ React Hooks app to calculate the BMI of a person. It can store the data for 7 da
 
 <!-- ![](images/Bmi_old.jpg) -->
 Line Chart
-![](images/Bmi_1.jpg)
+![](images/Bmi_1.JPG)
 Bar Chart
-![](images/Bmi_2.jpg)
+![](images/Bmi_2.JPG)
 7 Days Data
-![](images/Bmi_3.jpg)
+![](images/Bmi_3.JPG)
 
 Created with _create-react-app_. See the [full create-react-app guide](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md).
 
